@@ -1,6 +1,6 @@
 function add(array) {
     function getSum(total, num) {
-        return total + num
+        return total + num;
     };
     return array.reduce(getSum,0);
 };
@@ -16,5 +16,12 @@ function multiply(array) {
     function times(total, num) {
         return total * num;
     };
-    return array.reduce(times)
-}
+    return array.reduce(times);
+};
+
+function divide(array) {
+    function getDivision(total, num) {
+        return total / num;
+    };
+    return array.reduce(getDivision);
+};
