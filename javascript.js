@@ -10,4 +10,11 @@ function subtract(array) {
         return total - num;
     };
     return array.reduce(sub);
+};
+
+function multiply(array) {
+    function times(total, num) {
+        return total * num;
+    };
+    return array.reduce(times)
 }
