@@ -15,6 +15,26 @@ buttons.forEach(button => button.addEventListener('click', () =>{
     addToArray(button.value);
 }))
 
+addButton.addEventListener('click', () => {
+    operator = 'add';
+    displayValue('+');
+});
+
+subtractButton.addEventListener('click', () => {
+    operator = 'subtract';
+    displayValue('-');
+});
+
+multiplyButton.addEventListener('click', () => {
+    operator= 'multiply';
+    displayValue('x');
+});
+
+divideButton.addEventListener('click', () => {
+    operator= 'divide';
+    displayValue('/')
+});
+
 function displayValue(value) {
     equationDisplay.textContent += value;
 }
