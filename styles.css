@@ -7,6 +7,8 @@
 
 html {
     background-color: #F5F5DC;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
 }
 
 .calc-shell {
@@ -31,7 +33,10 @@ html {
     background-color: var(--dark);
     color: white;
     border-radius: 10px;
-    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: center;
     border: var(--green) solid 5px;
     border-bottom: none;
     border-right: none;
@@ -54,6 +59,8 @@ button {
     border-radius: 50%;
     color: var(--dark);
     cursor: pointer;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
 }
 
 button:active {
