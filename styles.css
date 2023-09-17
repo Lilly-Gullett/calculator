@@ -1,0 +1,71 @@
+:root {
+    --dark: #040D12;
+    --forest: #183D3D;
+    --green: #5C8374;
+    --sage: #93B1A6;
+}
+
+.calc-shell {
+    background-color: var(--forest);
+    width: 400px;
+    height: 570px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.readout {
+    width: 350px;
+    height: 100px;
+    background-color: var(--dark);
+    border-radius: 10px;
+    text-align: left;
+    border: var(--green) solid 5px;
+    border-bottom: none;
+    border-right: none; 
+}
+
+.row {
+    width: 380px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    width: 80px;
+    height: 80px;
+    background-color: var(--sage);
+    border: var(--green) outset 10px;
+    border-top: none;
+    border-left: none;
+    border-radius: 50%;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+button:active {
+    border: var(--green) outset 5px;
+    border-top: none;
+    border-left: none;
+    -moz-transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    -o-transform: translate(0px, 5px);
+    -ms-transform: translate(0px, 5px);
+    transform: translate(0px, 5px);
+}
+
+.clear {
+    width: 200px;
+    border-radius: 15px;
+}
+
+.equals {
+    width: 370px;
+    border-radius: 15px;
+}
