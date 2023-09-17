@@ -11,18 +11,25 @@ const seven = document.querySelector('.seven');
 const eight = document.querySelector('.eight');
 const nine = document.querySelector('.nine');
 const zero = document.querySelector('.zero');
+const addButton = document.querySelector('.add');
+const subtractButton = document.querySelector('.subtract');
+const multiplyButton = document.querySelector('.multiply');
+const divideButton = document.querySelector('.divide');
+const clearButton = document.querySelector('.clear');
+const equalsButton = document.querySelector('.equals');
+
 
 function operate(operator, firstNumber, secondNumber) {
     firstNumber = parseInt(firstNumber.join(''));
     secondNumber = parseInt(secondNumber.join('')); //turns the arrays of numbers into each being a single numeric response
     if (operator === 'add'){
-        return add([firstNumber, secondNumber]);
+        add([firstNumber, secondNumber]);
     } else if (operator === 'subtract') {
-        return subtract([firstNumber, secondNumber]);
+        subtract([firstNumber, secondNumber]);
     } else if (operator === 'multiply') {
-        return multiply([firstNumber, secondNumber]);
+        multiply([firstNumber, secondNumber]);
     } else if (operator === 'divide') {
-        return divide([firstNumber, secondNumber]);
+        divide([firstNumber, secondNumber]);
     }
 };
 
