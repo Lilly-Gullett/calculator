@@ -17,6 +17,7 @@ const multiplyButton = document.querySelector('.multiply');
 const divideButton = document.querySelector('.divide');
 const clearButton = document.querySelector('.clear');
 const equalsButton = document.querySelector('.equals');
+const equationDisplay = document.querySelector('.readout');
 
 
 function operate(operator, firstNumber, secondNumber) {
