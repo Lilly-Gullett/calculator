@@ -1,6 +1,6 @@
-let firstNumber;
+let firstNumber=[];
 let operator;
-let secondNumber;
+let secondNumber=[];
 const addButton = document.querySelector('.add');
 const subtractButton = document.querySelector('.subtract');
 const multiplyButton = document.querySelector('.multiply');
@@ -12,12 +12,20 @@ const buttons = document.querySelectorAll('button');
 
 buttons.forEach(button => button.addEventListener('click', () =>{
     displayValue(button.value);
+    addToArray(button.value);
 }))
 
 function displayValue(value) {
     equationDisplay.textContent += value;
 }
 
+function addToArray(value) {
+    if (!operator) {
+        firstNumber.push(value);
+    } else {
+        secondNumber.push(value);
+    }
+}
 
 function operate(operator, firstNumber, secondNumber) {
     firstNumber = parseInt(firstNumber.join(''));
