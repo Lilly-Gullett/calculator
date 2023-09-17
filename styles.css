@@ -5,7 +5,13 @@
     --sage: #93B1A6;
 }
 
+html {
+    background-color: #F5F5DC;
+}
+
 .calc-shell {
+    position: relative;
+    left: calc(50% - 200px);
     background-color: var(--forest);
     width: 400px;
     height: 570px;
@@ -23,11 +29,12 @@
     width: 350px;
     height: 100px;
     background-color: var(--dark);
+    color: white;
     border-radius: 10px;
     text-align: left;
     border: var(--green) solid 5px;
     border-bottom: none;
-    border-right: none; 
+    border-right: none;
 }
 
 .row {
@@ -61,7 +68,7 @@ button:active {
 }
 
 .clear {
-    width: 200px;
+    width: 170px;
     border-radius: 15px;
 }
 
