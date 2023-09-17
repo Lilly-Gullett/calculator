@@ -1,16 +1,6 @@
 let firstNumber;
 let operator;
 let secondNumber;
-const one = document.querySelector('.one');
-const two = document.querySelector('.two');
-const three = document.querySelector('.three');
-const four = document.querySelector('.four');
-const five = document.querySelector('.five');
-const six = document.querySelector('.six');
-const seven = document.querySelector('.seven');
-const eight = document.querySelector('.eight');
-const nine = document.querySelector('.nine');
-const zero = document.querySelector('.zero');
 const addButton = document.querySelector('.add');
 const subtractButton = document.querySelector('.subtract');
 const multiplyButton = document.querySelector('.multiply');
@@ -18,6 +8,15 @@ const divideButton = document.querySelector('.divide');
 const clearButton = document.querySelector('.clear');
 const equalsButton = document.querySelector('.equals');
 const equationDisplay = document.querySelector('.readout');
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => button.addEventListener('click', () =>{
+    displayValue(button.value);
+}))
+
+function displayValue(value) {
+    equationDisplay.textContent += value;
+}
 
 
 function operate(operator, firstNumber, secondNumber) {
