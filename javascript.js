@@ -43,6 +43,13 @@ equalsButton.addEventListener('click', () => {
     secondNumber = []; 
 })
 
+clearButton.addEventListener('click', () => {
+    equationDisplay.textContent = 0;
+    firstNumber = [];
+    secondNumber=[];
+    operator = '';
+})
+
 function displayValue(value) {
     equationDisplay.textContent += value;
 }
