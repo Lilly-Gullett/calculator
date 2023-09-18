@@ -32,8 +32,16 @@ multiplyButton.addEventListener('click', () => {
 
 divideButton.addEventListener('click', () => {
     operator= 'divide';
-    displayValue('/')
+    displayValue('/');
 });
+
+equalsButton.addEventListener('click', () => {
+    let response = operate(operator,firstNumber,secondNumber);
+    equationDisplay.textContent = response;
+    firstNumber = [response];
+    operator = '';
+    secondNumber = []; 
+})
 
 function displayValue(value) {
     equationDisplay.textContent += value;
@@ -50,14 +58,15 @@ function addToArray(value) {
 function operate(operator, firstNumber, secondNumber) {
     firstNumber = parseInt(firstNumber.join(''));
     secondNumber = parseInt(secondNumber.join('')); //turns the arrays of numbers into each being a single numeric response
+    let array = [firstNumber, secondNumber];
     if (operator === 'add'){
-        add([firstNumber, secondNumber]);
+        return add(array);
     } else if (operator === 'subtract') {
-        subtract([firstNumber, secondNumber]);
+        return subtract(array);
     } else if (operator === 'multiply') {
-        multiply([firstNumber, secondNumber]);
+        return multiply(array);
     } else if (operator === 'divide') {
-        divide([firstNumber, secondNumber]);
+        return divide(array);
     }
 };
 
