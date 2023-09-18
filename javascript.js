@@ -1,6 +1,6 @@
-let firstNumber=[];
+let firstNumber = [0];
 let operator;
-let secondNumber=[];
+let secondNumber = [];
 const addButton = document.querySelector('.add');
 const subtractButton = document.querySelector('.subtract');
 const multiplyButton = document.querySelector('.multiply');
@@ -9,6 +9,8 @@ const clearButton = document.querySelector('.clear');
 const equalsButton = document.querySelector('.equals');
 const equationDisplay = document.querySelector('.readout');
 const buttons = document.querySelectorAll('button');
+let equationDisplayValue = [0]; //setting this as an array will give the ability better remove values from the end.
+equationDisplay.textContent = equationDisplayValue;
 
 buttons.forEach(button => button.addEventListener('click', () =>{
     displayValue(button.value);
@@ -37,21 +39,28 @@ divideButton.addEventListener('click', () => {
 
 equalsButton.addEventListener('click', () => {
     let response = operate(operator,firstNumber,secondNumber);
-    equationDisplay.textContent = response;
+    equationDisplayValue = [response];
     firstNumber = [response];
     operator = '';
-    secondNumber = []; 
+    secondNumber = [];
+    equationDisplay.textContent = equationDisplayValue.join('');
 })
 
 clearButton.addEventListener('click', () => {
-    equationDisplay.textContent = 0;
-    firstNumber = [];
+    equationDisplayValue = [0];
+    equationDisplay.textContent = equationDisplayValue.join('');
+    firstNumber = [0];
     secondNumber=[];
     operator = '';
 })
 
 function displayValue(value) {
-    equationDisplay.textContent += value;
+    if (parseInt(equationDisplayValue.join('')) === 0) {
+        equationDisplayValue = [value];
+    } else {
+        equationDisplayValue.push(value);
+    };
+    equationDisplay.textContent = equationDisplayValue.join('');
 }
 
 function addToArray(value) {
