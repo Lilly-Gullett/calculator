@@ -1,6 +1,6 @@
 let firstNumber = [0];
 let operator;
-let secondNumber = [];
+let secondNumber = [0];
 const addButton = document.querySelector('.add');
 const subtractButton = document.querySelector('.subtract');
 const multiplyButton = document.querySelector('.multiply');
@@ -9,44 +9,44 @@ const clearButton = document.querySelector('.clear');
 const equalsButton = document.querySelector('.equals');
 const equationDisplay = document.querySelector('.readout');
 const buttons = document.querySelectorAll('button');
-let equationDisplayValue = [0]; //setting this as an array will give the ability better remove values from the end.
-equationDisplay.textContent = equationDisplayValue;
+let equationDisplayValue = [firstNumber,operator,secondNumber];
+equationDisplay.textContent = equationDisplayValue.join('');
 
 buttons.forEach(button => button.addEventListener('click', () =>{
-    displayValue(button.value);
     addToArray(button.value);
+    displayValue();
 }))
 
 addButton.addEventListener('click', () => {
-    if (parseInt(secondNumber.join('')) > 0) {
+    if (correctNumbers(secondNumber) > 0) {
         operateAndReset();
     };
     operator = 'add';
-    displayValue('+');
+    displayValue();
 });
 
 subtractButton.addEventListener('click', () => {
-    if (parseInt(secondNumber.join('')) > 0) {
+    if (correctNumbers(secondNumber) > 0) {
         operateAndReset();
     };
     operator = 'subtract';
-    displayValue('-');
+    displayValue();
 });
 
 multiplyButton.addEventListener('click', () => {
-    if (parseInt(secondNumber.join('')) > 0) {
+    if (correctNumbers(secondNumber) > 0) {
         operateAndReset();
     };
     operator= 'multiply';
-    displayValue('x');
+    displayValue();
 });
 
 divideButton.addEventListener('click', () => {
-    if (parseInt(secondNumber.join('')) > 0) {
+    if (correctNumbers(secondNumber) > 0) {
         operateAndReset();
     };
     operator= 'divide';
-    displayValue('/');
+    displayValue();
 });
 
 equalsButton.addEventListener('click', () => {
@@ -54,11 +54,10 @@ equalsButton.addEventListener('click', () => {
 })
 
 clearButton.addEventListener('click', () => {
-    equationDisplayValue = [0];
-    equationDisplay.textContent = equationDisplayValue.join('');
     firstNumber = [0];
-    secondNumber=[];
+    secondNumber=[0];
     operator = '';
+    displayValue();
 })
 
 function operateAndReset() {
@@ -66,16 +65,22 @@ function operateAndReset() {
     equationDisplayValue = [response];
     firstNumber = [response];
     operator = '';
-    secondNumber = [];
+    secondNumber = [0];
     equationDisplay.textContent = equationDisplayValue.join('');
 }
 
-function displayValue(value) {
-    if (parseInt(equationDisplayValue.join('')) === 0) {
-        equationDisplayValue = [value];
+function correctNumbers(array) {
+    return parseFloat(array.join(''))
+}
+
+function displayValue() {
+    if (!operator) {
+        equationDisplayValue = [correctNumbers(firstNumber)];
+    } else if (correctNumbers(secondNumber) === 0) {
+        equationDisplayValue = [correctNumbers(firstNumber),operator]
     } else {
-        equationDisplayValue.push(value);
-    };
+        equationDisplayValue = [correctNumbers(firstNumber),operator,correctNumbers(secondNumber)];
+    }
     equationDisplay.textContent = equationDisplayValue.join('');
 }
 
@@ -88,8 +93,8 @@ function addToArray(value) {
 }
 
 function operate(operator, firstNumber, secondNumber) {
-    firstNumber = parseInt(firstNumber.join(''));
-    secondNumber = parseInt(secondNumber.join('')); //turns the arrays of numbers into each being a single numeric response
+    firstNumber = correctNumbers(firstNumber);
+    secondNumber = correctNumbers(secondNumber); //turns the arrays of numbers into each being a single numeric response
     let array = [firstNumber, secondNumber];
     if (operator === 'add'){
         return add(array);
