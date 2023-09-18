@@ -18,21 +18,33 @@ buttons.forEach(button => button.addEventListener('click', () =>{
 }))
 
 addButton.addEventListener('click', () => {
+    if (parseInt(secondNumber.join('')) > 0) {
+        operateAndReset();
+    };
     operator = 'add';
     displayValue('+');
 });
 
 subtractButton.addEventListener('click', () => {
+    if (parseInt(secondNumber.join('')) > 0) {
+        operateAndReset();
+    };
     operator = 'subtract';
     displayValue('-');
 });
 
 multiplyButton.addEventListener('click', () => {
+    if (parseInt(secondNumber.join('')) > 0) {
+        operateAndReset();
+    };
     operator= 'multiply';
     displayValue('x');
 });
 
 divideButton.addEventListener('click', () => {
+    if (parseInt(secondNumber.join('')) > 0) {
+        operateAndReset();
+    };
     operator= 'divide';
     displayValue('/');
 });
