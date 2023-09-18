@@ -38,12 +38,7 @@ divideButton.addEventListener('click', () => {
 });
 
 equalsButton.addEventListener('click', () => {
-    let response = operate(operator,firstNumber,secondNumber);
-    equationDisplayValue = [response];
-    firstNumber = [response];
-    operator = '';
-    secondNumber = [];
-    equationDisplay.textContent = equationDisplayValue.join('');
+    operateAndReset()
 })
 
 clearButton.addEventListener('click', () => {
@@ -53,6 +48,15 @@ clearButton.addEventListener('click', () => {
     secondNumber=[];
     operator = '';
 })
+
+function operateAndReset() {
+    let response = operate(operator,firstNumber,secondNumber);
+    equationDisplayValue = [response];
+    firstNumber = [response];
+    operator = '';
+    secondNumber = [];
+    equationDisplay.textContent = equationDisplayValue.join('');
+}
 
 function displayValue(value) {
     if (parseInt(equationDisplayValue.join('')) === 0) {
