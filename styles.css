@@ -16,13 +16,13 @@ html {
     left: calc(50% - 200px);
     background-color: var(--forest);
     width: 400px;
-    height: 570px;
-    padding-top: 50px;
+    height: 560px;
+    padding-top: 40px;
     padding-bottom: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
     justify-content: space-around;
 }
@@ -40,6 +40,7 @@ html {
     border: var(--green) solid 5px;
     border-bottom: none;
     border-right: none;
+    padding-right: 10px;
 }
 
 .row {
@@ -82,4 +83,16 @@ button:active {
 .equals {
     width: 370px;
     border-radius: 15px;
+}
+
+footer {
+    font-family: sans-serif;
+    font-size: 10px;
+    color: var(--dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark);
+    cursor: pointer;
 }
