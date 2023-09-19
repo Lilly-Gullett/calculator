@@ -21,7 +21,7 @@ addButton.addEventListener('click', () => {
     if (correctNumbers(secondNumber) > 0) {
         operateAndReset();
     };
-    operator = 'add';
+    operator = '+';
     displayValue();
 });
 
@@ -29,7 +29,7 @@ subtractButton.addEventListener('click', () => {
     if (correctNumbers(secondNumber) > 0) {
         operateAndReset();
     };
-    operator = 'subtract';
+    operator = '-';
     displayValue();
 });
 
@@ -37,7 +37,7 @@ multiplyButton.addEventListener('click', () => {
     if (correctNumbers(secondNumber) > 0) {
         operateAndReset();
     };
-    operator= 'multiply';
+    operator= 'x';
     displayValue();
 });
 
@@ -45,7 +45,7 @@ divideButton.addEventListener('click', () => {
     if (correctNumbers(secondNumber) > 0) {
         operateAndReset();
     };
-    operator= 'divide';
+    operator= '/';
     displayValue();
 });
 
@@ -96,13 +96,13 @@ function operate(operator, firstNumber, secondNumber) {
     firstNumber = correctNumbers(firstNumber);
     secondNumber = correctNumbers(secondNumber); //turns the arrays of numbers into each being a single numeric response
     let array = [firstNumber, secondNumber];
-    if (operator === 'add'){
+    if (operator === '+'){
         return add(array);
-    } else if (operator === 'subtract') {
+    } else if (operator === '-') {
         return subtract(array);
-    } else if (operator === 'multiply') {
+    } else if (operator === 'x') {
         return multiply(array);
-    } else if (operator === 'divide') {
+    } else if (operator === '/') {
         return divide(array);
     }
 };
